@@ -46,10 +46,10 @@ export default function HeroSection() {
         className="pointer-events-none absolute inset-x-0 bottom-[-180px] h-80 bg-gradient-to-t from-orange-500/10 via-transparent to-transparent blur-3xl"
       />
 
-      {/* MAIN WRAPPER - MARGIN FIXED HERE */}
+       
       <div className="mx-auto flex max-w-[1400px] flex-col gap-10 px-4 md:px-10 pb-16 pt-20 md:flex-row md:items-center md:gap-12 md:pb-24 md:pt-24">
         
-        {/* LEFT SIDE CONTENT */}
+         
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
@@ -61,21 +61,21 @@ export default function HeroSection() {
             <span>AI Voice Agents for Sales Teams</span>
           </div>
 
-          {/* HEADING BIGGER */}
+           
           <h1 className="text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl md:text-6xl">
             Turn{" "}
             <span className="text-orange-400">every outbound call</span> into a
             revenue opportunity.
           </h1>
 
-          {/* PARAGRAPH BIGGER */}
+           
           <p className="max-w-xl text-base text-slate-300 sm:text-lg">
             Anturon deploys AI voice agents that sound human, follow your
             playbooks, and plug directly into your CRM — so your team talks only
             to the hottest leads.
           </p>
 
-          {/* BUTTONS BIGGER */}
+           
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
               href="#book-demo"
@@ -91,7 +91,7 @@ export default function HeroSection() {
             </a>
           </div>
 
-          {/* STATS BIGGER */}
+           
           <div className="mt-4 grid gap-3 text-sm text-slate-300 sm:grid-cols-3 sm:text-base">
             {stats.map((item) => (
               <div
@@ -113,7 +113,7 @@ export default function HeroSection() {
           </p>
         </motion.div>
 
-        {/* RIGHT SIDE UI */}
+         
         <motion.div
           initial={{ opacity: 0, x: 40, scale: 0.96 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}

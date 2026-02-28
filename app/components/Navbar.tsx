@@ -16,9 +16,9 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
-      {/* NAVBAR ROW */}
+       
       <nav className="mx-auto flex max-w-[1400px] items-center px-6 py-5">
-        {/* LEFT: LOGO */}
+         
         <div className="flex items-center gap-1">
           <span className="rounded bg-orange-500 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide">
             anturon
@@ -28,7 +28,7 @@ export default function Navbar() {
           </span>
         </div>
 
-        {/* CENTER: NAV LINKS (DESKTOP) */}
+         
         <div className="hidden md:flex flex-[1.3] items-center justify-end gap-4">
           {navLinks.map((item) =>
             item.external ? (
@@ -53,7 +53,7 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* RIGHT: BUTTONS (DESKTOP) */}
+         
         <div className="hidden md:flex flex-1 items-center justify-end gap-3">
           <Link
             href="https://api.anturon.io"
@@ -70,7 +70,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* MOBILE: HAMBURGER BUTTON (RIGHT CORNER) */}
+         
         <button
           className="ml-auto inline-flex h-9 w-9 items-center justify-center rounded-md border border-slate-700 md:hidden"
           onClick={() => setIsOpen((prev) => !prev)}
@@ -82,7 +82,7 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* MOBILE DROPDOWN MENU */}
+       
       {isOpen && (
         <div className="border-t border-slate-800 bg-slate-950 md:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-3">
@@ -110,7 +110,7 @@ export default function Navbar() {
               )
             )}
 
-            {/* Dashboard in mobile menu */}
+             
             <Link
               href="https://api.anturon.io"
               onClick={() => setIsOpen(false)}
