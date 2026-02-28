@@ -7,7 +7,6 @@ const navLinks = [
   { label: "Playground", href: "#playground" },
   { label: "Pricing", href: "#packages" },
   { label: "Features", href: "#features" },
-  { label: "Dashboard", href: "https://api.anturon.io", external: true },
   { label: "About", href: "#about" },
   { label: "Demo", href: "#book-demo" },
 ];
@@ -17,9 +16,10 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
-         
-        <div className="flex items-center gap-2">
+      {/* NAVBAR ROW */}
+      <nav className="mx-auto flex max-w-[1400px] items-center px-6 py-5">
+        {/* LEFT: LOGO */}
+        <div className="flex items-center gap-1">
           <span className="rounded bg-orange-500 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide">
             anturon
           </span>
@@ -28,19 +28,8 @@ export default function Navbar() {
           </span>
         </div>
 
-         
-        <button
-          className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-slate-700 md:hidden"
-          onClick={() => setIsOpen((prev) => !prev)}
-          aria-label="Toggle navigation"
-        >
-          <span className="block h-0.5 w-4 bg-slate-100" />
-          <span className="mt-1 block h-0.5 w-4 bg-slate-100" />
-          <span className="mt-1 block h-0.5 w-4 bg-slate-100" />
-        </button>
-
-         
-        <div className="hidden items-center gap-6 md:flex">
+        {/* CENTER: NAV LINKS (DESKTOP) */}
+        <div className="hidden md:flex flex-[1.3] items-center justify-end gap-4">
           {navLinks.map((item) =>
             item.external ? (
               <a
@@ -62,6 +51,16 @@ export default function Navbar() {
               </Link>
             )
           )}
+        </div>
+
+        {/* RIGHT: BUTTONS (DESKTOP) */}
+        <div className="hidden md:flex flex-1 items-center justify-end gap-3">
+          <Link
+            href="https://api.anturon.io"
+            className="rounded-full bg-orange-500 px-4 py-1.5 text-sm font-semibold text-slate-950 shadow-sm transition hover:bg-orange-400"
+          >
+            Dashboard
+          </Link>
 
           <Link
             href="#book-demo"
@@ -70,12 +69,23 @@ export default function Navbar() {
             Book Live Demo
           </Link>
         </div>
+
+        {/* MOBILE: HAMBURGER BUTTON (RIGHT CORNER) */}
+        <button
+          className="ml-auto inline-flex h-9 w-9 items-center justify-center rounded-md border border-slate-700 md:hidden"
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-label="Toggle navigation"
+        >
+          <span className="block h-0.5 w-4 bg-slate-100" />
+          <span className="mt-1 block h-0.5 w-4 bg-slate-100" />
+          <span className="mt-1 block h-0.5 w-4 bg-slate-100" />
+        </button>
       </nav>
 
-       
+      {/* MOBILE DROPDOWN MENU */}
       {isOpen && (
         <div className="border-t border-slate-800 bg-slate-950 md:hidden">
-          <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3">
+          <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-3">
             {navLinks.map((item) =>
               item.external ? (
                 <a
@@ -99,6 +109,15 @@ export default function Navbar() {
                 </Link>
               )
             )}
+
+            {/* Dashboard in mobile menu */}
+            <Link
+              href="https://api.anturon.io"
+              onClick={() => setIsOpen(false)}
+              className="mt-2 rounded-full bg-orange-500 px-3 py-2 text-center text-sm font-semibold text-slate-950 hover:bg-orange-400"
+            >
+              Dashboard
+            </Link>
 
             <Link
               href="#book-demo"
