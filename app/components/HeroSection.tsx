@@ -64,13 +64,13 @@ export default function HeroSection() {
            
           <h1 className="text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl md:text-6xl">
             Turn{" "}
-            <span className="text-orange-400">every outbound call</span> into a
+            <span className="text-orange-400">every call</span> into a
             revenue opportunity.
           </h1>
 
            
           <p className="max-w-xl text-base text-slate-300 sm:text-lg">
-            Anturon deploys AI voice agents that sound human, follow your
+            Anturon deploys AI voice agents that sound natural, follow your
             playbooks, and plug directly into your CRM — so your team talks only
             to the hottest leads.
           </p>
@@ -87,7 +87,7 @@ export default function HeroSection() {
               href="#playground"
               className="inline-flex items-center justify-center rounded-full border border-slate-700 px-6 py-3 text-base font-medium text-slate-100 transition hover:border-slate-500 hover:bg-slate-900/60"
             >
-              Try the call playground
+            Build Your Agentic AI 
             </a>
           </div>
 
@@ -129,7 +129,7 @@ export default function HeroSection() {
                 </span>
                 <div>
                   <p className="text-xs font-medium text-slate-100">
-                    Outbound campaign: Bihar – Hot leads
+                    Outbound campaign: Hot leads
                   </p>
                   <p className="text-[11px] text-slate-400">
                     3 agents live · 127 calls in progress
@@ -149,13 +149,13 @@ export default function HeroSection() {
                 stage="Qualification"
               />
               <CallRow
-                name="Retail lead – Patna"
+                name="Retail lead "
                 number="+91 •••• 9051"
                 status="Ringing · auto-retry"
                 stage="Follow-up"
               />
               <CallRow
-                name="Bihar SME – Lead"
+                name="SME – Lead"
                 number="+91 •••• 4410"
                 status="Wrap-up · notes syncing"
                 stage="Booked demo"
@@ -166,7 +166,7 @@ export default function HeroSection() {
               <div className="text-[11px] text-slate-400">
                 Answer rate today
                 <div className="text-sm font-semibold text-slate-50">
-                  42%
+                  80%
                 </div>
               </div>
               <button className="rounded-full bg-slate-100/10 px-3 py-1.5 text-[11px] font-medium text-slate-100 hover:bg-slate-100/15">
