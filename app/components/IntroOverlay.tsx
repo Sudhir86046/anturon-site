@@ -8,8 +8,8 @@ export default function IntroOverlay() {
 
   useEffect(() => {
      
-    const t1 = setTimeout(() => setHideAnim(true), 1600);
-    const t2 = setTimeout(() => setVisible(false), 2000);
+    const t1 = setTimeout(() => setHideAnim(true), 1200);
+    const t2 = setTimeout(() => setVisible(false), 1400);
 
     return () => {
       clearTimeout(t1);

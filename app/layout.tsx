@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   title: "Anturon - Enterprise Voice AI for Sales, Support & BPO Automation",
   description:
     "Anturon deploys AI voice agents for enterprise inbound & outbound calls - sales, support, BPO & scheduling. CRM-integrated. Live under 10 days. Book a demo.",
+  icons: {
+    icon: "/favicon.jpg",
+    shortcut: "/favicon.jpg",
+    apple: "/favicon.jpg",
+  },
 };
 
 export default function RootLayout({
@@ -32,4 +37,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+} 

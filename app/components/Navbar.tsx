@@ -32,35 +32,43 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
-<Link href="/" className="flex flex-col items-start leading-tight">
-  <img
-    src="/Logo.jpg"
-    alt="Anturon Logo"
-    className="h-9 w-auto object-contain"/>
-  <span className="mt-1 text-[11px] text-slate-400 tracking-wide whitespace-nowrap">
-    Every Call, Every Lead, Fully Automated
-  </span>
-</Link>
+        <Link href="/" className="flex flex-col items-start leading-tight">
+          <img
+            src="/Logo.jpg"
+            alt="Anturon Logo"
+            className="h-9 w-auto object-contain"
+          />
+          <span className="mt-1 whitespace-nowrap text-[11px] tracking-wide text-slate-400">
+            Every Call, Every Lead, Fully Automated
+          </span>
+        </Link>
+
         <div className="hidden w-full items-center justify-end gap-8 md:flex">
           <div className="flex flex-1 items-center justify-center gap-6">
-            <div
-              className="relative"
-              onMouseEnter={() => setIsPlaygroundOpen(true)}
-              onMouseLeave={() => setIsPlaygroundOpen(false)}
-            >
-              <button className="flex items-center gap-0.5 text-sm text-slate-200 hover:text-orange-400">
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setIsPlaygroundOpen((prev) => !prev)}
+                className="flex items-center gap-1 text-sm text-slate-200 transition hover:text-orange-400"
+              >
                 <span>Playground</span>
-                <span className="text-[10px]">▾</span>
+                <span
+                  className={`text-[10px] transition-transform duration-200 ${
+                    isPlaygroundOpen ? "rotate-180" : ""
+                  }`}
+                >
+                  ▾
+                </span>
               </button>
 
               {isPlaygroundOpen && (
-                <div className="absolute left-1/2 top-full z-40 mt-2 w-56 -translate-x-1/2 rounded-xl border border-slate-800 bg-slate-950/95 px-3 py-2 shadow-xl">
+                <div className="absolute left-1/2 top-full z-40 mt-1 w-56 -translate-x-1/2 rounded-xl border border-slate-800 bg-slate-950/95 px-3 py-2 shadow-xl">
                   {playgroundTabs.map((t) => (
                     <Link
                       key={t.id}
                       href={t.href}
                       onClick={() => setIsPlaygroundOpen(false)}
-                      className="block w-full whitespace-nowrap rounded-md px-3 py-1.5 text-left text-xs text-slate-200 hover:bg-slate-800"
+                      className="block w-full whitespace-nowrap rounded-md px-3 py-2 text-left text-xs text-slate-200 transition hover:bg-slate-800 hover:text-orange-400"
                     >
                       {t.label}
                     </Link>
@@ -73,7 +81,7 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm text-slate-200 hover:text-orange-400"
+                className="text-sm text-slate-200 transition hover:text-orange-400"
               >
                 {link.label}
               </Link>
@@ -83,7 +91,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               href="https://api.anturon.io"
-              className="rounded-full bg-orange-500 px-10 py-2 text-sm font-semibold text-slate-950 hover:bg-orange-400"
+              className="rounded-full bg-orange-500 px-10 py-2 text-sm font-semibold text-slate-950 transition hover:bg-orange-400"
             >
               Dashboard
             </Link>
@@ -91,6 +99,7 @@ export default function Navbar() {
         </div>
 
         <button
+          type="button"
           className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-slate-700 text-slate-200 md:hidden"
           onClick={() => setIsOpen((prev) => !prev)}
         >
@@ -111,7 +120,7 @@ export default function Navbar() {
                 <Link
                   href={t.href}
                   onClick={() => setIsOpen(false)}
-                  className="block w-full whitespace-nowrap text-left text-xs text-slate-300"
+                  className="block w-full whitespace-nowrap text-left text-xs text-slate-300 hover:text-orange-400"
                 >
                   • {t.label}
                 </Link>
@@ -123,7 +132,7 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="block py-1.5 text-sm text-slate-200"
+              className="block py-1.5 text-sm text-slate-200 hover:text-orange-400"
               onClick={() => setIsOpen(false)}
             >
               {link.label}
@@ -132,7 +141,7 @@ export default function Navbar() {
 
           <a
             href="#book-demo"
-            className="mt-2 inline-flex w-full justify-center rounded-full bg-orange-500 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-orange-400"
+            className="mt-2 inline-flex w-full justify-center rounded-full bg-orange-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-orange-400"
             onClick={() => setIsOpen(false)}
           >
             Book demo

@@ -855,102 +855,102 @@ export default function Home() {
         </div>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        viewport={{ once: true }}
-        className="rounded-2xl border border-slate-600 bg-slate-900/50 p-4"
-      >
-        <div className="mb-3 flex items-center justify-between">
-          <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-orange-250">
-            MINI FAQ
-          </h3>
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.1 }}
+  viewport={{ once: true }}
+  className="h-full min-h-[420px] rounded-2xl border border-slate-600 bg-slate-900/50 p-4"
+>
+  <div className="mb-3 flex items-center justify-between">
+    <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-orange-300">
+      MINI FAQ
+    </h3>
 
-          <span className="rounded-full bg-orange-500/10 px-2 py-0.5 text-[10px] font-medium text-orange-300">
-            Scroll
-          </span>
+    <span className="rounded-full bg-orange-500/10 px-2 py-0.5 text-[10px] font-medium text-orange-300">
+      Scroll
+    </span>
+  </div>
+
+  <p className="mb-2 text-xs text-slate-300">
+    Frequently Asked Questions
+  </p>
+
+  <div className="faq-scroll h-[300px] overflow-hidden rounded-xl border border-slate-800 bg-slate-950/50 px-3 py-2">
+    <div className="faq-track flex flex-col gap-3">
+      {[
+        {
+          q: "How does Anturon's Voice AI sound compared to a human agent?",
+          a: "Anturon's AI voice agents mirror natural speech patterns including pacing, pauses, tonality and cloning, making them sound like a human rep in most conversations.",
+        },
+        {
+          q: "Will Anturon disrupt our existing CRM or telephony setup?",
+          a: "No. Anturon is built for zero-disruption deployment and plugs directly into your CRM, dialer and lead sources with no infrastructure changes required.",
+        },
+        {
+          q: "How quickly can we go live with Anturon?",
+          a: "Most enterprise teams are fully operational within 10 days of onboarding, including CRM integration and playbook setup.",
+        },
+        {
+          q: "Is Anturon compliant with enterprise data and call regulations?",
+          a: "Yes. Anturon includes built-in call recording controls, consent management and audit-ready logs to support enterprise compliance requirements.",
+        },
+        {
+          q: "Can Anturon handle both inbound and outbound calls?",
+          a: "Yes. Anturon supports inbound customer support, outbound sales, BPO workflows, appointment booking and demo scheduling within a single platform.",
+        },
+        {
+          q: "Can Anturon follow our team’s exact call script?",
+          a: "Yes. Anturon can be configured around your script, tone, qualification logic and escalation rules.",
+        },
+        {
+          q: "Does Anturon support pilot deployments before full rollout?",
+          a: "Yes. Most teams start with a focused pilot and then expand across campaigns, teams and workflows.",
+        },
+
+        {
+          q: "How does Anturon's Voice AI sound compared to a human agent?",
+          a: "Anturon's AI voice agents mirror natural speech patterns including pacing, pauses, tonality and cloning, making them sound like a human rep in most conversations.",
+        },
+        {
+          q: "Will Anturon disrupt our existing CRM or telephony setup?",
+          a: "No. Anturon is built for zero-disruption deployment and plugs directly into your CRM, dialer and lead sources with no infrastructure changes required.",
+        },
+        {
+          q: "How quickly can we go live with Anturon?",
+          a: "Most enterprise teams are fully operational within 10 days of onboarding, including CRM integration and playbook setup.",
+        },
+        {
+          q: "Is Anturon compliant with enterprise data and call regulations?",
+          a: "Yes. Anturon includes built-in call recording controls, consent management and audit-ready logs to support enterprise compliance requirements.",
+        },
+        {
+          q: "Can Anturon handle both inbound and outbound calls?",
+          a: "Yes. Anturon supports inbound customer support, outbound sales, BPO workflows, appointment booking and demo scheduling within a single platform.",
+        },
+        {
+          q: "Can Anturon follow our team’s exact call script?",
+          a: "Yes. Anturon can be configured around your script, tone, qualification logic and escalation rules.",
+        },
+        {
+          q: "Does Anturon support pilot deployments before full rollout?",
+          a: "Yes. Most teams start with a focused pilot and then expand across campaigns, teams and workflows.",
+        },
+      ].map((item, index) => (
+        <div
+          key={index}
+          className="rounded-lg border border-slate-800 bg-slate-900/60 p-3"
+        >
+          <p className="text-[12px] font-semibold leading-5 text-white">
+            {item.q}
+          </p>
+          <p className="mt-1 text-[11px] leading-5 text-slate-400">
+            {item.a}
+          </p>
         </div>
-
-        <p className="mb-2 text-xs text-slate-300">
-          Frequently Asked Questions
-        </p>
-
-        <div className="faq-scroll h-[120px] overflow-hidden rounded-xl border border-slate-800 bg-slate-950/50 px-3 py-2">
-          <div className="faq-track flex flex-col gap-3">
-            {[
-              {
-                q: "How does Anturon's Voice AI sound compared to a human agent?",
-                a: "Anturon's AI voice agents mirror natural speech patterns including pacing, pauses, tonality and cloning, making them sound like a human rep in most conversations.",
-              },
-              {
-                q: "Will Anturon disrupt our existing CRM or telephony setup?",
-                a: "No. Anturon is built for zero-disruption deployment and plugs directly into your CRM, dialer and lead sources with no infrastructure changes required.",
-              },
-              {
-                q: "How quickly can we go live with Anturon?",
-                a: "Most enterprise teams are fully operational within 10 days of onboarding, including CRM integration and playbook setup.",
-              },
-              {
-                q: "Is Anturon compliant with enterprise data and call regulations?",
-                a: "Yes. Anturon includes built-in call recording controls, consent management and audit-ready logs to support enterprise compliance requirements.",
-              },
-              {
-                q: "Can Anturon handle both inbound and outbound calls?",
-                a: "Yes. Anturon supports inbound customer support, outbound sales, BPO workflows, appointment booking and demo scheduling within a single platform.",
-              },
-              {
-                q: "Can Anturon follow our team’s exact call script?",
-                a: "Yes. Anturon can be configured around your script, tone, qualification logic and escalation rules.",
-              },
-              {
-                q: "Does Anturon support pilot deployments before full rollout?",
-                a: "Yes. Most teams start with a focused pilot and then expand across campaigns, teams and workflows.",
-              },
-
-              {
-                q: "How does Anturon's Voice AI sound compared to a human agent?",
-                a: "Anturon's AI voice agents mirror natural speech patterns including pacing, pauses, tonality and cloning, making them sound like a human rep in most conversations.",
-              },
-              {
-                q: "Will Anturon disrupt our existing CRM or telephony setup?",
-                a: "No. Anturon is built for zero-disruption deployment and plugs directly into your CRM, dialer and lead sources with no infrastructure changes required.",
-              },
-              {
-                q: "How quickly can we go live with Anturon?",
-                a: "Most enterprise teams are fully operational within 10 days of onboarding, including CRM integration and playbook setup.",
-              },
-              {
-                q: "Is Anturon compliant with enterprise data and call regulations?",
-                a: "Yes. Anturon includes built-in call recording controls, consent management and audit-ready logs to support enterprise compliance requirements.",
-              },
-              {
-                q: "Can Anturon handle both inbound and outbound calls?",
-                a: "Yes. Anturon supports inbound customer support, outbound sales, BPO workflows, appointment booking and demo scheduling within a single platform.",
-              },
-              {
-                q: "Can Anturon follow our team’s exact call script?",
-                a: "Yes. Anturon can be configured around your script, tone, qualification logic and escalation rules.",
-              },
-              {
-                q: "Does Anturon support pilot deployments before full rollout?",
-                a: "Yes. Most teams start with a focused pilot and then expand across campaigns, teams and workflows.",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="rounded-lg border border-slate-800 bg-slate-900/60 p-3"
-              >
-                <p className="text-[12px] font-semibold leading-5 text-white">
-                  {item.q}
-                </p>
-                <p className="mt-1 text-[11px] leading-5 text-slate-400">
-                  {item.a}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
+      ))}
+    </div>
+  </div>
+</motion.div>
     </div>
     <motion.div
   initial={{ opacity: 0, x: 40 }}
