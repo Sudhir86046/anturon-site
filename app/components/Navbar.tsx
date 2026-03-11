@@ -15,14 +15,12 @@ const playgroundTabs: { id: PlaygroundTabId; label: string; href: string }[] = [
 const navLinks = [
   { label: "Pricing", href: "/pricing" },
   { label: "Features", href: "/features" },
-  { label: "About", href: "/about" },
   { label: "Demo", href: "/demo" },
 ];
 
 const mobileNavLinks = [
   { label: "Pricing", href: "/pricing" },
   { label: "Features", href: "/features" },
-  { label: "About", href: "/about" },
   { label: "Demo", href: "/demo" },
   { label: "Dashboard", href: "https://api.anturon.io" },
 ];
@@ -34,14 +32,15 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
-        <div className="flex items-center gap-2">
-          <img
-            src="/Logo.jpg"
-            alt="Anturon Logo"
-            className="h-8 w-auto"
-          />
-        </div>
-
+<Link href="/" className="flex flex-col items-start leading-tight">
+  <img
+    src="/Logo.jpg"
+    alt="Anturon Logo"
+    className="h-9 w-auto object-contain"/>
+  <span className="mt-1 text-[11px] text-slate-400 tracking-wide whitespace-nowrap">
+    Every Call, Every Lead, Fully Automated
+  </span>
+</Link>
         <div className="hidden w-full items-center justify-end gap-8 md:flex">
           <div className="flex flex-1 items-center justify-center gap-6">
             <div

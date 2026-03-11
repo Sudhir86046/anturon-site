@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const stats = [
-  { label: "Calls handled / day", value: "10,000+" },
-  { label: "Avg. response time", value: "0.8 sec" },
-  { label: "Live in", value: "< 7 days" },
+  { label: "Calls Handled Daily", value: "10,000+" },
+  { label: "Avg. Agent Response Time", value: "0.8 sec" },
+  { label: "Go-Live in Under 10 Days", value: "< 10 Days" },
+  { label: "Incubated", value: "CIMP-BIIF" },
 ];
-
 export default function HeroSection() {
   const [showIntroGlow, setShowIntroGlow] = useState(true);
 
@@ -58,58 +58,65 @@ export default function HeroSection() {
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/40 bg-orange-500/10 px-3 py-1 text-xs font-medium text-orange-300">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-orange-400" />
-            <span>AI Voice Agents for Sales Teams</span>
+            <span>LIVE  |  Enterprise Voice AI - Inbound · Outbound · Support · BPO</span>
           </div>
-
-           
-          <h1 className="text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl md:text-6xl">
-            Turn{" "}
-            <span className="text-orange-400">every call</span> into a
-            revenue opportunity.
+          <h1 className="text-3xl font-bold leading-tight md:text-5xl">
+            Turn <span className="text-orange-500">Every Enterprise Call</span> Into a Closed Deal - Automatically.
           </h1>
 
            
-          <p className="max-w-xl text-base text-slate-300 sm:text-lg">
-            Anturon deploys AI voice agents that sound natural, follow your
-            playbooks, and plug directly into your CRM — so your team talks only
-            to the hottest leads.
+          <p className="mt-4 max-w-xl text-lg text-slate-300">
+          Anturon's AI voice agents handle inbound and outbound calls across sales, customer support, BPO, and scheduling - sounding natural, following your playbooks, and syncing live with the CRM. Your team engages only the leads that are ready to close.
           </p>
 
            
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a
-              href="#book-demo"
-              className="inline-flex items-center justify-center rounded-full bg-orange-500 px-7 py-3 text-base font-semibold text-slate-950 shadow-sm transition hover:bg-orange-400"
-            >
-              Book a live demo
-            </a>
-            <a
-              href="#playground"
-              className="inline-flex items-center justify-center rounded-full border border-slate-700 px-6 py-3 text-base font-medium text-slate-100 transition hover:border-slate-500 hover:bg-slate-900/60"
-            >
-            Build Your Agentic AI 
-            </a>
-          </div>
+         <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
+
+  <div className="flex flex-col items-start">
+    <a
+      href="#book-demo"
+      className="inline-flex items-center justify-center rounded-full bg-orange-500 px-7 py-3 text-base font-semibold text-slate-950 shadow-sm transition hover:bg-orange-400"
+    >
+      Book a Live Demo
+    </a>
+    <span className="mt-1 text-xs text-slate-400">
+      See Anturon handle a real call in 15 mins
+    </span>
+  </div>
+ 
+  <div className="flex flex-col items-start">
+    <a
+      href="#pilot"
+      className="inline-flex items-center justify-center rounded-full border border-slate-700 px-8 py-3 text-base font-medium text-slate-100 transition hover:border-slate-500 hover:bg-slate-900/60"
+    >
+      Start Pilot
+    </a>
+    <span className="mt-1 text-xs text-slate-400">
+      No infrastructural changes. Live in 10 days.
+    </span>
+  </div>
+
+</div>
 
            
-          <div className="mt-4 grid gap-3 text-sm text-slate-300 sm:grid-cols-3 sm:text-base">
-            {stats.map((item) => (
-              <div
-                key={item.label}
-                className="rounded-xl border border-slate-800 bg-slate-900/40 px-3 py-3"
-              >
-                <div className="text-[12px] uppercase tracking-wide text-slate-400">
-                  {item.label}
-                </div>
+          <div className="mt-4 grid gap-3 text-sm text-slate-300 sm:grid-cols-4 sm:text-base">
+               {stats.map((item) => (
+               <div
+                  key={item.label}
+                  className="rounded-xl border border-slate-800 bg-slate-900/40 px-3 py-3"
+                >
+                 <div className="text-[12px] uppercase tracking-wide text-slate-400">
+                {item.label}
+               </div>
                 <div className="mt-1 text-base font-semibold text-slate-50 sm:text-lg">
-                  {item.value}
-                </div>
-              </div>
-            ))}
-          </div>
+              {item.value}
+               </div>
+         </div>
+       ))}
+</div>
 
           <p className="mt-3 text-[12px] text-slate-500 sm:text-sm">
-            Plug &amp; play with your existing dialer, CRM and lead sources — no infra changes required.
+              Integrates seamlessly with your existing CRM, dialer & lead stack — zero infrastructure changes, zero disruption to your current workflow.
           </p>
         </motion.div>
 

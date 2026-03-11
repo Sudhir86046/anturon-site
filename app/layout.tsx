@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import Navbar from "./components/Navbar";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-title: "Anturon Voice AI",
-description: "Interactive playground experience for AI voice workforce",
+  title: "Anturon - Enterprise Voice AI for Sales, Support & BPO Automation",
+  description:
+    "Anturon deploys AI voice agents for enterprise inbound & outbound calls - sales, support, BPO & scheduling. CRM-integrated. Live under 10 days. Book a demo.",
 };
 
 export default function RootLayout({
@@ -25,12 +26,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-slate-950 text-slate-50 antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
-        <main>{children}</main>
+        {children}
       </body>
     </html>
   );
-} 
+}

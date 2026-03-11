@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import Footer from "../../components/Footer";
 
 const previewImages = [
   "/preview1.jpg",
@@ -117,6 +118,7 @@ export default function PlaygroundDetailPage() {
           </div>
         </div>
       )}
+      <Footer/>
     </main>
   );
 }

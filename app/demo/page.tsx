@@ -1,4 +1,7 @@
-export default function DemoPage() {
+import Footer from "../components/Footer";
+export default function DemoPage()
+
+{
   return (
     <main className="min-h-screen bg-slate-950 px-4 py-12 text-white">
       <section className="mx-auto max-w-5xl">
@@ -76,6 +79,7 @@ export default function DemoPage() {
           </div>
         </div>
       </section>
+      <Footer/>
     </main>
   );
 }

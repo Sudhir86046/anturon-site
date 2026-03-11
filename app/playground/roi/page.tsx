@@ -1,224 +1,139 @@
 "use client";
 
-const roiStats = [
-  {
-    label: "Calls handled / day",
-    value: "10,000+",
-    desc: "Scale outbound campaigns without increasing headcount.",
-  },
-  {
-    label: "Agent availability",
-    value: "24/7",
-    desc: "Run qualification and follow-up beyond working hours.",
-  },
-  {
-    label: "Lead response speed",
-    value: "Instant",
-    desc: "Reach leads faster while intent is still high.",
-  },
-  {
-    label: "Manual effort reduced",
-    value: "70%",
-    desc: "Free up sales teams from repetitive calling workflows.",
-  },
-];
+import { motion } from "framer-motion";
+import Footer from "../../components/Footer";
 
-const comparisonRows = [
+const rows = [
   {
-    metric: "Call volume",
-    human: "Limited by team size",
-    ai: "Scales instantly across campaigns",
+    metric: "Cost per 1,000 Calls",
+    ai: "Fraction of human cost",
+    human: "5 - 8× higher operational cost",
+  },
+  {
+    metric: "Live Call Coverage",
+    ai: "3 - 5× more volume",
+    human: "1× baseline",
+  },
+  {
+    metric: "Go-Live Time",
+    ai: "Under 10 days",
+    human: "4 - 8 weeks (hiring + training)",
   },
   {
     metric: "Availability",
-    human: "Working hours only",
-    ai: "24/7 campaign coverage",
+    ai: "24 × 7 × 365",
+    human: "Business hours only",
   },
   {
-    metric: "Lead qualification",
-    human: "Manual and inconsistent",
-    ai: "Structured and repeatable",
+    metric: "Consistency",
+    ai: "100% playbook-adherent",
+    human: "Varies by rep",
   },
   {
-    metric: "Follow-up speed",
-    human: "Often delayed",
-    ai: "Immediate and automated",
-  },
-  {
-    metric: "Reporting",
-    human: "Manual tracking",
-    ai: "Real-time dashboard visibility",
-  },
-];
-
-const impactCards = [
-  {
-    title: "Reduce repetitive work",
-    desc: "Let AI handle first-touch conversations, qualification questions, and basic routing so your sales team spends more time closing.",
-  },
-  {
-    title: "Increase campaign efficiency",
-    desc: "Run more calls, test more scripts, and process more leads without expanding the calling team every time volume increases.",
-  },
-  {
-    title: "Improve sales focus",
-    desc: "Push high-intent conversations to your team while filtering low-priority leads into structured follow-up workflows.",
+    metric: "Scale on Demand",
+    ai: "Instant",
+    human: "Weeks of hiring & onboarding",
   },
 ];
 
 export default function ROIPage() {
   return (
-    <main className="min-h-screen bg-slate-950 px-4 py-10 text-white">
-      <section className="mx-auto max-w-7xl">
-        <div className="overflow-hidden rounded-[32px] border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 p-8 md:p-12">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
-            Playground / ROI
+    <main className="min-h-screen bg-slate-950 text-slate-50">
+
+      <section className="border-b border-slate-800 px-4 py-20">
+        <motion.div
+          className="mx-auto max-w-6xl text-center"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+
+          <h1 className="text-3xl font-semibold md:text-5xl">
+            The ROI Is Clear -{" "}
+            <span className="text-orange-400">
+              AI Voice Agents vs Traditional Calling Teams
+            </span>
+          </h1>
+
+          <p className="mx-auto mt-4 max-w-3xl text-sm text-slate-300 md:text-lg">
+            Enterprises using Anturon AI voice agents consistently achieve
+            3–5× greater call coverage at a fraction of the cost of a human
+            calling team - with 24×7 availability, instant scale, and zero
+            ramp-up time.
           </p>
 
-          <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-            <div>
-              <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-5xl">
-                Measure the business impact of AI voice automation
-              </h1>
+        </motion.div>
+      </section>
 
-              <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 md:text-lg">
-                Anturon helps teams lower manual calling effort, respond faster
-                to leads, and scale campaign performance without increasing
-                operational complexity. The result is a more efficient sales
-                workflow with better use of human time.
-              </p>
+      <section className="px-4 py-16">
+        <motion.div
+          className="mx-auto max-w-6xl"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
 
-              <div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-200">
-                <span className="rounded-full border border-slate-700 bg-slate-900 px-4 py-2">
-                  Lower operational load
-                </span>
-                <span className="rounded-full border border-slate-700 bg-slate-900 px-4 py-2">
-                  Faster lead response
-                </span>
-                <span className="rounded-full border border-slate-700 bg-slate-900 px-4 py-2">
-                  Better conversion focus
-                </span>
+          <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/40">
+
+            <div className="grid grid-cols-3 border-b border-slate-800 bg-slate-900/60">
+              <div className="p-4 text-sm font-semibold text-slate-300">
+                Metric
+              </div>
+              <div className="border-l border-slate-800 p-4 text-sm font-semibold text-orange-300">
+                With Anturon AI Agents
+              </div>
+              <div className="border-l border-slate-800 p-4 text-sm font-semibold text-slate-300">
+                Human Calling Team
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
-                ROI Snapshot
-              </p>
-
-              <div className="mt-5 space-y-4">
-                <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
-                  <p className="text-sm text-slate-400">Efficiency gain</p>
-                  <p className="mt-2 text-3xl font-bold">Higher throughput</p>
-                </div>
-
-                <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
-                  <p className="text-sm text-slate-400">Team benefit</p>
-                  <p className="mt-2 text-3xl font-bold">Less repetitive work</p>
-                </div>
-
-                <div className="rounded-2xl border border-slate-800 bg-slate-950/70 p-4">
-                  <p className="text-sm text-slate-400">Business outcome</p>
-                  <p className="mt-2 text-3xl font-bold">Faster lead handling</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {roiStats.map((item) => (
-            <div
-              key={item.label}
-              className="rounded-3xl border border-slate-800 bg-slate-900/70 p-6"
-            >
-              <p className="text-sm text-slate-400">{item.label}</p>
-              <h2 className="mt-3 text-3xl font-bold">{item.value}</h2>
-              <p className="mt-3 text-sm leading-6 text-slate-300">
-                {item.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-8 rounded-[32px] border border-slate-800 bg-slate-900/70 p-6 md:p-8">
-          <div className="mb-6 max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
-              Comparison View
-            </p>
-            <h2 className="mt-3 text-3xl font-bold">
-              Compare traditional calling with AI-powered workflows
-            </h2>
-            <p className="mt-3 text-base leading-7 text-slate-300">
-              This view helps buyers quickly understand where automation creates
-              measurable efficiency across campaign operations.
-            </p>
-          </div>
-
-          <div className="overflow-hidden rounded-3xl border border-slate-800">
-            <div className="grid grid-cols-3 bg-slate-950/80 px-4 py-4 text-sm font-semibold text-slate-200">
-              <div>Metric</div>
-              <div>Traditional Team</div>
-              <div>Anturon AI Agent</div>
-            </div>
-
-            {comparisonRows.map((row, index) => (
+            {rows.map((row) => (
               <div
                 key={row.metric}
-                className={`grid grid-cols-3 px-4 py-4 text-sm ${
-                  index !== comparisonRows.length - 1
-                    ? "border-t border-slate-800"
-                    : ""
-                }`}
+                className="grid grid-cols-3 border-b border-slate-800 last:border-b-0"
               >
-                <div className="font-medium text-white">{row.metric}</div>
-                <div className="pr-3 text-slate-400">{row.human}</div>
-                <div className="text-slate-300">{row.ai}</div>
+                <div className="p-4 text-sm text-slate-200">
+                  {row.metric}
+                </div>
+
+                <div className="border-l border-slate-800 p-4 text-sm text-slate-100">
+                  {row.ai}
+                </div>
+
+                <div className="border-l border-slate-800 p-4 text-sm text-slate-400">
+                  {row.human}
+                </div>
               </div>
             ))}
-          </div>
-        </div>
-        <div className="mt-8 grid gap-6 lg:grid-cols-3">
-          {impactCards.map((card) => (
-            <div
-              key={card.title}
-              className="rounded-[28px] border border-slate-800 bg-slate-900/70 p-6"
-            >
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
-                Impact
-              </p>
-              <h3 className="mt-3 text-2xl font-bold">{card.title}</h3>
-              <p className="mt-4 text-base leading-7 text-slate-300">
-                {card.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-8 rounded-[32px] border border-slate-800 bg-slate-900/70 p-8">
-          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
-                ROI Summary
-              </p>
-              <h2 className="mt-3 text-3xl font-bold md:text-4xl">
-                Better use of sales time creates better business outcomes
-              </h2>
-              <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300">
-                Anturon is not just about making more calls. It is about helping
-                your team spend less time on repetitive outreach and more time
-                on qualified conversations. That shift improves operational
-                efficiency, campaign speed, and decision-making quality across
-                the funnel.
-              </p>
-            </div>
 
-            <div className="rounded-3xl border border-orange-500/30 bg-orange-500/10 px-6 py-5">
-              <p className="text-sm text-orange-300">Outcome</p>
-              <p className="mt-2 text-2xl font-bold text-white">
-                Scale smarter, not heavier
-              </p>
-            </div>
           </div>
-        </div>
+
+          <p className="mt-4 text-xs text-slate-500 sm:text-sm">
+              All figures are directional benchmarks. During your live demo, we&apos;ll model the exact ROI based on your team size, call volume, and current infra costs.
+          </p>
+           
+
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
+
+            <a
+              href="#book-demo"
+              className="inline-flex items-center justify-center rounded-full bg-orange-500 px-7 py-3 text-sm font-semibold text-slate-950 hover:bg-orange-400 transition"
+            >
+              Book a Live Demo
+            </a>
+
+            <a
+              href="#packages"
+              className="inline-flex items-center justify-center rounded-full border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-100 hover:bg-slate-900 transition"
+            >
+              View Pricing
+            </a>
+
+          </div>
+
+        </motion.div>
       </section>
+       <Footer/>
     </main>
   );
 }

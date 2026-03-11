@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Footer from "../../components/Footer";
 
 const resources = [
   {
@@ -114,6 +115,7 @@ export default function ResourcesPage() {
         </div>
 
       </section>
+      <Footer/>
     </main>
   );
 }

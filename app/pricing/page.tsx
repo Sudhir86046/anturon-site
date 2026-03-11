@@ -1,114 +1,263 @@
-import Link from "next/link";
+"use client";
 
+import { motion } from "framer-motion";
+import Footer from "../components/Footer";
 const plans = [
   {
+    badge: "PILOT-READY",
     name: "Starter",
-    price: "₹--/mo",
-    desc: "For early teams testing AI voice workflows.",
+    description:
+      "Perfect for enterprises running a proof-of-concept or validating Voice AI on a specific campaign or use case.",
     features: [
-      "1 AI voice campaign",
-      "Basic lead qualification",
-      "Dashboard access",
-      "Email support",
+      "Up to 2 concurrent AI voice agents",
+      "Single campaign deployment",
+      "Inbound or outbound call support",
+      "Basic call analytics & transcripts",
+      "CRM-ready (plug & play setup)",
     ],
+    buttonText: "Start Pilot",
+    buttonStyle:
+      "border border-slate-700 text-slate-100 hover:bg-slate-900",
+    badgeStyle:
+      "bg-orange-500/10 text-orange-300",
+    highlight: false,
+    microcopy: "Ideal for first deployment and internal validation.",
   },
   {
+    badge: "RECOMMENDED",
     name: "Growth",
-    price: "₹--/mo",
-    desc: "For teams scaling outbound calling operations.",
+    description:
+      "Built for teams scaling AI-led calling across multiple campaigns, queues, and operational workflows.",
     features: [
-      "Multiple campaigns",
-      "Custom call flows",
-      "Lead tagging and routing",
-      "Priority support",
+      "Up to 10 concurrent AI voice agents",
+      "Multiple campaigns & call queues",
+      "CRM sync & intelligent routing",
+      "Advanced call analytics & transcripts",
+      "Sales, support, BPO & scheduling workflows",
     ],
-    highlighted: true,
+    buttonText: "Book a Pricing Call",
+    buttonStyle:
+      "bg-orange-500 text-slate-950 hover:bg-orange-400",
+    badgeStyle:
+      "bg-orange-500/15 text-orange-300",
+    highlight: true,
+    microcopy: "Best for revenue teams ready to scale AI operations.",
   },
   {
+    badge: "CUSTOM",
     name: "Enterprise",
-    price: "Custom",
-    desc: "For large teams with advanced workflow needs.",
+    description:
+      "Designed for high-volume organizations needing custom workflows, deeper integrations, and compliance-ready deployment.",
     features: [
-      "Custom integrations",
-      "Advanced analytics",
-      "Dedicated onboarding",
-      "Enterprise support",
+      "Unlimited AI voice agents",
+      "Custom workflows & playbooks",
+      "Advanced analytics & reporting",
+      "Custom integrations & SLAs",
+      "Security, compliance & enterprise support",
     ],
+    buttonText: "Talk to Enterprise Team",
+    buttonStyle:
+      "border border-slate-700 text-slate-100 hover:bg-slate-900",
+    badgeStyle:
+      "bg-slate-800 text-slate-300",
+    highlight: false,
+    microcopy: "For complex environments and multi-team rollout.",
+  },
+];
+
+const faqs = [
+  {
+    question: "How fast can Anturon go live?",
+    answer:
+      "Most pilot deployments can go live in under 10 days depending on workflow complexity, CRM setup, and approval timelines.",
+  },
+  {
+    question: "Do we need to change our current tech stack?",
+    answer:
+      "No. Anturon is designed to integrate with your existing CRM, dialer, and lead stack with minimal disruption.",
+  },
+  {
+    question: "Can Anturon support inbound and outbound calls?",
+    answer:
+      "Yes. Plans can support inbound, outbound, or a combination based on your business workflow.",
+  },
+  {
+    question: "Do you offer custom enterprise pricing?",
+    answer:
+      "Yes. Enterprise plans are tailored based on call volume, integrations, compliance requirements, and deployment scope.",
   },
 ];
 
 export default function PricingPage() {
   return (
-    <main className="min-h-screen bg-slate-950 px-4 py-12 text-white">
-      <section className="mx-auto max-w-7xl">
-        <div className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-orange-400">
-            Pricing
-          </p>
-          <h1 className="text-4xl font-bold md:text-5xl">
-            Simple pricing for growing sales teams
+    <main className="min-h-screen bg-slate-950 text-slate-50">
+      <section className="border-b border-slate-800 px-4 py-20">
+        <motion.div
+          className="mx-auto max-w-6xl text-center"
+          initial={{ opacity: 0, y: 32 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          <span className="inline-flex rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-orange-300">
+            Enterprise Pricing
+          </span>
+
+          <h1 className="mx-auto mt-6 max-w-4xl text-3xl font-semibold leading-tight md:text-5xl">
+            Voice AI Plans Built for{" "}
+            <span className="text-orange-400">Enterprise Scale</span>
           </h1>
-          <p className="mt-4 text-lg text-slate-300">
-            Choose a plan that fits your campaign size, team workflow, and
-            outbound calling needs.
+
+          <p className="mx-auto mt-4 max-w-3xl text-sm text-slate-300 md:text-lg">
+            Deploy your first AI voice agent in under 10 days, then scale across
+            sales, inbound support, BPO, and scheduling without changing your
+            existing stack.
           </p>
-        </div>
+        </motion.div>
+      </section>
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={`rounded-3xl border p-6 ${
-                plan.highlighted
-                  ? "border-orange-400 bg-slate-900 shadow-lg shadow-orange-500/10"
-                  : "border-slate-800 bg-slate-900/70"
-              }`}
-            >
-              <p className="text-sm uppercase tracking-[0.2em] text-orange-400">
-                {plan.name}
-              </p>
-              <h2 className="mt-4 text-3xl font-bold">{plan.price}</h2>
-              <p className="mt-3 text-slate-300">{plan.desc}</p>
-
-              <div className="mt-6 space-y-3">
-                {plan.features.map((feature) => (
-                  <div
-                    key={feature}
-                    className="rounded-xl border border-slate-800 bg-slate-950/60 p-3 text-sm text-slate-300"
-                  >
-                    {feature}
-                  </div>
-                ))}
-              </div>
-
-              <Link
-                href="/demo"
-                className={`mt-6 inline-block rounded-xl px-5 py-3 font-semibold ${
-                  plan.highlighted
-                    ? "bg-orange-500 text-black hover:bg-orange-400"
-                    : "border border-slate-700 bg-slate-950 text-white hover:border-orange-400"
+      <section className="px-4 py-16">
+        <motion.div
+          className="mx-auto max-w-6xl"
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          <div className="grid gap-6 md:grid-cols-3">
+            {plans.map((plan) => (
+              <div
+                key={plan.name}
+                className={`flex h-full flex-col rounded-2xl p-6 ${
+                  plan.highlight
+                    ? "border border-orange-500/60 bg-slate-900/60 shadow-[0_0_40px_rgba(248,150,30,0.2)]"
+                    : "border border-slate-800 bg-slate-900/40"
                 }`}
               >
-                Choose plan
-              </Link>
-            </div>
-          ))}
-        </div>
+                <span
+                  className={`mb-3 inline-flex w-fit rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-wide ${plan.badgeStyle}`}
+                >
+                  {plan.badge}
+                </span>
 
-        <div className="mt-10 rounded-3xl border border-slate-800 bg-slate-900/70 p-6 text-center">
-          <h3 className="text-2xl font-bold">Need custom pricing?</h3>
-          <p className="mt-3 text-slate-300">
-            We can create a plan based on your campaign volume, workflow, and
-            integration needs.
-          </p>
-          <Link
-            href="/demo"
-            className="mt-5 inline-block rounded-xl bg-orange-500 px-6 py-3 font-semibold text-black hover:bg-orange-400"
-          >
-            Talk to sales
-          </Link>
-        </div>
+                <h2 className="text-xl font-semibold">{plan.name}</h2>
+
+                <p className="mt-2 text-sm leading-6 text-slate-300">
+                  {plan.description}
+                </p>
+
+                <ul className="mt-6 space-y-3 text-sm text-slate-200">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-3">
+                      <span className="mt-0.5 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-orange-500/15 text-xs font-bold text-orange-300">
+                        ✓
+                      </span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-8">
+                  <button
+                    className={`w-full rounded-full px-5 py-3 text-sm font-semibold transition ${plan.buttonStyle}`}
+                  >
+                    {plan.buttonText}
+                  </button>
+                  <p className="mt-2 text-center text-xs text-slate-400">
+                    {plan.microcopy}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 grid gap-4 rounded-2xl border border-slate-800 bg-slate-900/30 p-6 text-sm text-slate-300 md:grid-cols-4">
+            <div>
+              <div className="text-base font-semibold text-white">Live Fast</div>
+              <p className="mt-1">Pilot deployments can go live in under 10 days.</p>
+            </div>
+            <div>
+              <div className="text-base font-semibold text-white">CRM Ready</div>
+              <p className="mt-1">Integrates with your existing sales and support workflows.</p>
+            </div>
+            <div>
+              <div className="text-base font-semibold text-white">Flexible Scale</div>
+              <p className="mt-1">Start small, then expand across teams and campaigns.</p>
+            </div>
+            <div>
+              <div className="text-base font-semibold text-white">Enterprise Fit</div>
+              <p className="mt-1">Built for security, compliance, and custom operations.</p>
+            </div>
+          </div>
+        </motion.div>
       </section>
+
+      <section className="border-t border-slate-800 px-4 py-16">
+        <motion.div
+          className="mx-auto max-w-6xl"
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          <div className="rounded-3xl border border-orange-500/20 bg-gradient-to-br from-orange-500/10 to-slate-900 p-8 text-center">
+            <h2 className="text-2xl font-semibold md:text-3xl">
+              Not sure which plan fits your team?
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm text-slate-300 md:text-base">
+              We’ll help you map the right Voice AI setup based on call volume,
+              workflows, integrations, and deployment timeline.
+            </p>
+
+            <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+              <a
+                href="#"
+                className="inline-flex items-center justify-center rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-orange-400"
+              >
+                Book a Live Demo
+              </a>
+              <a
+                href="#"
+                className="inline-flex items-center justify-center rounded-full border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:bg-slate-900"
+              >
+                Talk to Sales
+              </a>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      <section className="border-t border-slate-800 px-4 py-16">
+        <motion.div
+          className="mx-auto max-w-4xl"
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          <h2 className="text-2xl font-semibold md:text-3xl">Pricing FAQ</h2>
+          <p className="mt-3 text-sm text-slate-300 md:text-base">
+            Common questions teams ask before launching a pilot or scaling
+            enterprise Voice AI.
+          </p>
+
+          <div className="mt-8 space-y-4">
+            {faqs.map((faq) => (
+              <div
+                key={faq.question}
+                className="rounded-2xl border border-slate-800 bg-slate-900/40 p-5"
+              >
+                <h3 className="text-base font-semibold text-white">
+                  {faq.question}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-300">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+      <Footer/>
     </main>
   );
 }
