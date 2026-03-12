@@ -67,7 +67,7 @@ export default function HeroSection() {
     >
       Start Pilot
     </a>
-    <span classNam0e="mt-1 text-x text-slate-400 text-right">
+    <span classNam0e="mt-1 text-x text-slate-400">
       Live in 2-3 days.
     </span>
   </div>
