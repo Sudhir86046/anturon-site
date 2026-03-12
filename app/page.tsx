@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import HeroSection from "./components/HeroSection";
@@ -845,13 +846,15 @@ export default function Home() {
             className="w-full rounded-lg border border-slate-700 bg-slate-900 px-4 py-1 text-slate-100 outline-none"
           />
 
-          <motion.button
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            className="w-full rounded-full bg-orange-500 py-1 font-semibold text-black transition hover:bg-orange-400"
-          >
-            Request Demo
-          </motion.button>
+          <Link href="/demo">
+  <motion.button
+    whileHover={{ scale: 1.03 }}
+    whileTap={{ scale: 0.97 }}
+    className="w-full rounded-full bg-orange-500 py-1 font-semibold text-black transition hover:bg-orange-400"
+  >
+    Request Demo
+  </motion.button>
+</Link>
         </div>
       </motion.div>
       <motion.div

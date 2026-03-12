@@ -283,7 +283,7 @@ export default function CustomiseAgentPage() {
 
   // Top playground
   const [topAgentName, setTopAgentName] = useState("Alex");
-  const [topLanguage, setTopLanguage] = useState("English");
+  const [topLanguage, setTopLanguage] = useState("Hindi");
   const [topPhoneNumber, setTopPhoneNumber] = useState("7464079221");
   const [topCompany, setTopCompany] = useState("");
   const [topIndustry, setTopIndustry] = useState("");
@@ -294,7 +294,6 @@ export default function CustomiseAgentPage() {
   const [topCrm, setTopCrm] = useState("");
   const [topNotes, setTopNotes] = useState("");
 
-  // Right panel
   const [agentPurpose, setAgentPurpose] = useState(
     "This agent calls warm leads from our website to qualify them for a product demo."
   );
@@ -311,7 +310,7 @@ export default function CustomiseAgentPage() {
   ];
 
   const languageOptions = [
-    { label: "English" },
+    { label: "English"},
     { label: "Hindi", locked: true },
     { label: "Hinglish (Bilingual)", locked: true },
     { label: "Regional Languages", locked: true },
@@ -365,6 +364,13 @@ export default function CustomiseAgentPage() {
     { label: "Custom (Enterprise)", value: "Custom (Enterprise)", locked: true },
   ];
 
+  const playgroundLanguageOptions = [
+    { label: "Hindi", value: "Hindi", locked: true },
+    { label: "Hinglish", value: "Hinglish" },
+    { label: "English", value: "English", locked: true },
+    { label: "Regional Languages", value: "Regional Languages", locked: true },
+  ];
+
   const smartPrompt = useMemo(() => {
     const prompts: Record<string, string> = {
       "Outbound Sales Call":
@@ -387,10 +393,6 @@ export default function CustomiseAgentPage() {
   useEffect(() => {
     setAiPrompt(smartPrompt);
   }, [smartPrompt]);
-
-  useEffect(() => {
-    if (language === "English") setTopLanguage("English");
-  }, [language]);
 
   useEffect(() => {
     if (audience === "Enterprise Decision-Makers") {
@@ -437,10 +439,8 @@ export default function CustomiseAgentPage() {
 
   return (
     <main className="min-h-screen bg-slate-950 text-white">
-      
       <section className="px-4 py-12 md:px-8 xl:px-12">
         <div className="mx-auto grid max-w-7xl gap-8 xl:grid-cols-[1.02fr_0.98fr]">
-          
           <div className="space-y-8">
             <Tile
               sectionLabel="Voice & Behaviour"
@@ -574,7 +574,6 @@ export default function CustomiseAgentPage() {
             </Tile>
           </div>
 
-           
           <div className="h-fit xl:sticky xl:top-6">
             <div className="overflow-hidden rounded-[28px] border border-slate-800 bg-[#030712] shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
               <div className="border-b border-slate-800 px-6 py-6">
@@ -603,7 +602,27 @@ export default function CustomiseAgentPage() {
                   }}
                 />
 
-                <div className="relative z-10 space-y-5">
+                <div className="relative z-10 space-y-4">
+                  <MiniFlowCard title="Agent Name" active>
+                    <input
+                      type="text"
+                      value={topAgentName}
+                      onChange={(e) => setTopAgentName(e.target.value)}
+                      className="w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm text-slate-100 outline-none transition focus:border-orange-400"
+                    />
+                    <p className="mt-2 text-xs text-slate-400">
+                      Default agent name set to Alex.
+                    </p>
+                  </MiniFlowCard>
+
+                  <PlaygroundSelectBox
+                    title="Language Selection"
+                    value={topLanguage}
+                    onChange={setTopLanguage}
+                    options={playgroundLanguageOptions}
+                    helper="Only Hindi and Hinglish are selectable in this trial setup."
+                  />
+
                   <MiniFlowCard
                     title="AI Prompt, Agent Behaviour & Capabilities"
                     active={rightHighlights.prompt}
@@ -611,7 +630,7 @@ export default function CustomiseAgentPage() {
                     <textarea
                       value={aiPrompt}
                       onChange={(e) => setAiPrompt(e.target.value)}
-                      rows={8}
+                      rows={6}
                       maxLength={500}
                       placeholder="e.g. Be professional and friendly. Start by asking if it's a good time to speak..."
                       className="w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm text-slate-100 outline-none transition focus:border-orange-400"
@@ -628,7 +647,7 @@ export default function CustomiseAgentPage() {
                     <textarea
                       value={agentPurpose}
                       onChange={(e) => setAgentPurpose(e.target.value)}
-                      rows={3}
+                      rows={2}
                       maxLength={300}
                       placeholder="e.g. This agent calls warm leads from our website to qualify them for a product demo."
                       className="w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm text-slate-100 outline-none transition focus:border-orange-400"
@@ -745,7 +764,7 @@ export default function CustomiseAgentPage() {
                           onClick={() => setSelectedImage(src)}
                           className="group overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 text-left transition duration-300 hover:scale-[1.02] hover:border-orange-400"
                         >
-                          <div className="relative h-44 w-full">
+                          <div className="relative h-36 w-full">
                             <Image
                               src={src}
                               alt={`Customisation preview ${index + 1}`}
