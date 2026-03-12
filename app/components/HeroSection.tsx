@@ -48,27 +48,27 @@ export default function HeroSection() {
            
          <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
 
-  <div className="flex flex-col items-start">
+<div className="flex flex-col items-start">
     <a
       href="#book-demo"
       className="inline-flex items-center justify-center rounded-full bg-orange-500 px-7 py-3 text-base font-semibold text-slate-950 shadow-sm transition hover:bg-orange-400"
     >
       Book a Live Demo
     </a>
-    <span className="mt-1 text-xs text-slate-400">
-      See Anturon handle a real call in 15 mins
+    <span className="mt-1 text-x text-slate-400">
+            See  Agent  in  Action
     </span>
   </div>
  
   <div className="flex flex-col items-start">
     <a
       href="#pilot"
-      className="inline-flex items-center justify-center rounded-full border border-slate-700 px-8 py-3 text-base font-medium text-slate-100 transition hover:border-slate-500 hover:bg-slate-900/60"
+      className="inline-flex items-center justify-center rounded-full border border-slate-700 px-9 py-3 text-base font-medium text-slate-100 transition hover:border-slate-500 hover:bg-slate-900/60"
     >
       Start Pilot
     </a>
-    <span className="mt-1 text-xs text-slate-400">
-      No infrastructural changes. Live in 2-3 days.
+    <span classNam0e="mt-1 text-x text-slate-400 text-right">
+      Live in 2-3 days.
     </span>
   </div>
 
