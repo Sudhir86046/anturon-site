@@ -8,8 +8,6 @@ type PlaygroundTabId = "how" | "customise" | "roi" | "resources";
 const playgroundTabs: { id: PlaygroundTabId; label: string; href: string }[] = [
   { id: "how", label: "How does it work", href: "/playground/how-it-works" },
   { id: "customise", label: "Customise your agent", href: "/playground/customise-agent" },
-  { id: "roi", label: "ROI view", href: "/playground/roi" },
-  { id: "resources", label: "Resources", href: "/playground/resources" },
 ];
 
 const navLinks = [
@@ -30,7 +28,7 @@ export default function Navbar() {
   const [isPlaygroundOpen, setIsPlaygroundOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-slate-800 bg-black backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
         <Link href="/" className="flex flex-col items-start leading-tight">
           <img

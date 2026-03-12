@@ -50,7 +50,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Playground */}
           <div>
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-white">
               Playground
@@ -72,22 +71,8 @@ export default function Footer() {
                   Customise your agent
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/playground/roi"
-                  className="transition hover:text-orange-400"
-                >
-                  ROI view
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/playground/resources"
-                  className="transition hover:text-orange-400"
-                >
-                  Resources
-                </Link>
-              </li>
+               
+              
             </ul>
           </div>
 
@@ -111,12 +96,10 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-slate-800 pt-6 text-xs text-slate-500 md:flex-row">
-          <p>© 2026 Anturon Voice AI. All rights reserved.</p>
+          <p>© 2025 Anturon Voice AI. All rights reserved.</p>
 
           <div className="flex flex-wrap items-center gap-4">
-            <Link href="/about" className="transition hover:text-orange-400">
-              About
-            </Link>
+             
             <Link href="/pricing" className="transition hover:text-orange-400">
               Pricing
             </Link>

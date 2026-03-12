@@ -249,7 +249,7 @@ export default function Home() {
   {[
     {
       title: "Natural-Quality AI Voice with human voice cloning",
-      desc: "Conversations indistinguishable from your best human rep",
+      desc: "Sounds exactly like your top human representative.",
     },
     {
       title: "Intelligent Lead Prioritization",
@@ -283,12 +283,12 @@ export default function Home() {
 </div>
 <div className="mt-12 grid grid-cols-2 gap-4 border-t border-slate-800 pt-6 text-sm md:grid-cols-3 lg:grid-cols-6">
   {[
-    "CIMP-BIIF Incubated",
+    "Custom Setup",
     "Enterprise-Grade Security",
-    "Live in Under 7 Days",
+    "Live in Under 2-3 Days",
     "CRM & Dialer Integrations",
     "10,000+ AI Calls Daily",
-    "Pilots Successfully Completed",
+    "Advanced Analytics",
   ].map((item) => (
     <div
       key={item}
@@ -332,27 +332,29 @@ export default function Home() {
             className="absolute inset-0 opacity-30"
             style={{
               backgroundImage:
-                "radial-gradient(rgba(148,163,184,0.16) 1px, transparent 1px)",
+                "radial-gradient(rgba(143, 158, 180, 0.16) 1px, transparent 1px)",
               backgroundSize: "16px 16px",
             }}
           />
 
-          <MiniFlowCard className="left-[30px] top-[70px] w-[190px]" title="Agent Name">
-            <input
-              type="text"
-              value="Alex"
-              readOnly
-              className="w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 outline-none"
-            />
-          </MiniFlowCard>
+          <MiniFlowCard
+             className="left-[30px] top-[70px] w-[190px]"
+             title="Agent Name">
+             <input
+               type="text"
+               placeholder="Enter your name"
+               defaultValue=""
+               className="w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 outline-none"
+              />
+            </MiniFlowCard>
 
-          <MiniFlowCard className="left-[250px] top-[70px] w-[210px]" title="Preferred Language">
+          <MiniFlowCard className="left-[250px] top-[70px] w-[220px]" title="Preferred Language">
             <select
               id="language"
               name="language"
               value={formData.language}
               onChange={handleChange}
-              className="w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 outline-none transition focus:border-orange-400"
+              className="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-100 outline-none transition focus:border-orange-400"
             >
               <option value="">Select language</option>
               <option disabled>English</option>
@@ -363,14 +365,17 @@ export default function Home() {
             </select>
           </MiniFlowCard>
 
-          <MiniFlowCard className="left-[490px] top-[70px] w-[190px]" title="Phone Number">
-            <input
-              type="tel"
-              value="7464079221"
-              readOnly
-              className="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-400 outline-none"
-            />
-          </MiniFlowCard>
+          <MiniFlowCard
+            className="left-[490px] top-[70px] w-[190px]"
+            title="Phone Number"
+          >
+          <input
+            type="tel"
+            placeholder="Enter phone number"
+            defaultValue=""
+            className="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-100 outline-none"
+          />
+        </MiniFlowCard>
 
           <MiniFlowCard className="left-[710px] top-[70px] w-[230px]" title="Company Name">
             <input
@@ -479,7 +484,7 @@ export default function Home() {
             />
           </MiniFlowCard>
 
-          <MiniFlowCard className="left-[620px] top-[570px] w-[320px]" title="Final Notes">
+          <MiniFlowCard className="left-[420px] top-[540px] w-[340px]" title="Final Notes">
             <textarea
               id="notes"
               name="notes"
@@ -487,31 +492,34 @@ export default function Home() {
               placeholder="Tell us about your campaign goals, script style, calling hours, escalation rules, etc."
               value={formData.notes}
               onChange={handleChange}
-              className="w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 outline-none transition focus:border-orange-400"
+              className="w-full rounded-x1 border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-orange-400"
             />
           </MiniFlowCard>
 
-          <div className="absolute left-[700px] top-[685px]">
-            <button className="rounded-xl bg-orange-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-orange-400">
-              Continue Setup
-            </button>
-          </div>
+         <div className="absolute left-[800px] top-[725px]">
+  <Link href="/playground/customise-agent#start-trial">
+    <button className="rounded-xl bg-orange-500 px-2 py-0.5 text-sm font-semibold text-slate-950 transition hover:bg-orange-400">
+      Continue Setup
+    </button>
+  </Link>
+</div>
 
           <FlowDotLineH className="left-[220px] top-[132px]" width={30} delay={0.05} />
-          <FlowDotLineH className="left-[460px] top-[132px]" width={30} delay={0.2} />
+          <FlowDotLineH className="left-[470px] top-[132px]" width={20} delay={0.2} />
           <FlowDotLineH className="left-[680px] top-[132px]" width={30} delay={0.35} />
 
-          <FlowDotLineV className="left-[830px] top-[187px]" height={53} delay={0.5} />
-          <FlowDotLineH className="left-[760px] top-[240px]" width={70} delay={0.65} />
+          <FlowDotLineV className="left-[830px] top-[171px]" height={70} delay={0.5} />
+          <FlowDotLineH className="left-[745px] top-[240px]" width={85} delay={0.65} />
 
           <FlowDotLineH className="left-[300px] top-[300px]" width={30} delay={0.8} />
           <FlowDotLineH className="left-[510px] top-[300px]" width={30} delay={0.95} />
 
-          <FlowDotLineV className="left-[650px] top-[357px]" height={53} delay={1.1} />
+          <FlowDotLineV className="left-[650px] top-[341px]" height={70} delay={1.1} />
           <FlowDotLineH className="left-[420px] top-[470px]" width={30} delay={1.25} />
           <FlowDotLineH className="left-[690px] top-[470px]" width={30} delay={1.4} />
 
-          <FlowDotLineV className="left-[780px] top-[520px]" height={50} delay={1.55} />
+          <FlowDotLineV className="left-[850px] top-[510px]" height={215} delay={1.55} />
+          <FlowDotLineV className="left-[625px] top-[510px]" height={30} delay={1.55} />
         </div>
       </div>
     </div>
@@ -521,12 +529,12 @@ export default function Home() {
         <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.24em] text-orange-300">
           Agent Name
         </p>
-        <input
-          type="text"
-          value="joss"
-          readOnly
-          className="w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 outline-none"
-        />
+            <input
+               type="text"
+               placeholder="Enter your name"
+               defaultValue=""
+               className="w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 outline-none"
+              />
       </div>
 
       <div className="rounded-[20px] border border-slate-800 bg-[#071226]/95 p-4">
@@ -548,12 +556,12 @@ export default function Home() {
         <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.24em] text-orange-300">
           Phone Number
         </p>
-        <input
-          type="tel"
-          value="7464079221"
-          readOnly
-          className="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-400 outline-none"
-        />
+         <input
+            type="tel"
+            placeholder="Enter phone number"
+            defaultValue=""
+            className="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-100 outline-none"
+          />
       </div>
 
       <div className="rounded-[20px] border border-slate-800 bg-[#071226]/95 p-4">
@@ -677,107 +685,14 @@ export default function Home() {
           className="w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 outline-none"
         />
       </div>
-
-      <button className="rounded-xl bg-orange-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-orange-400">
-        Continue Setup
-      </button>
+       
+        <button className="rounded-xl bg-orange-500 px-3 py-0.5 text-sm font-semibold text-slate-950 transition hover:bg-orange-400" >
+         Continue Setup
+        </button>
+       
     </div>
   </motion.div>
-</section>
-
-<section className="border-t border-slate-800 px-4 py-20 bg-[#050b18]">
-  <div className="mx-auto max-w-6xl space-y-10">
-
-    <div className="text-center space-y-4">
-      <h2 className="text-3xl font-semibold md:text-4xl text-white">
-        The ROI Is Clear – AI Voice Agents vs. Traditional Calling Teams
-      </h2>
-
-      <p className="mx-auto max-w-3xl text-slate-300 text-sm md:text-base">
-        Enterprises using Anturon's AI voice agents consistently achieve 
-        <span className="text-orange-400 font-semibold"> 3–5× greater call coverage </span> 
-        at a fraction of the cost of a human calling team — with 
-        <span className="text-orange-400 font-semibold"> 24×7 availability, instant scale, </span>
-        and zero ramp-up time.  
-        Your human reps stay focused on what they do best: closing.
-      </p>
-    </div>
-
-    <div className="overflow-x-auto">
-      <table className="w-full border border-slate-800 rounded-xl overflow-hidden text-sm">
-        <thead className="bg-slate-900 text-slate-200">
-          <tr>
-            <th className="px-6 py-4 text-left">Metric</th>
-            <th className="px-6 py-4 text-left text-orange-400">
-              With Anturon AI Agents
-            </th>
-            <th className="px-6 py-4 text-left">
-              Human Calling Team Only
-            </th>
-          </tr>
-        </thead>
-
-        <tbody className="divide-y divide-slate-800 text-slate-300">
-
-          <tr>
-            <td className="px-6 py-4">Cost per 1,000 Calls</td>
-            <td className="px-6 py-4 text-green-400">Fraction of human cost</td>
-            <td className="px-6 py-4">5 - 8× higher operational cost</td>
-          </tr>
-
-          <tr>
-            <td className="px-6 py-4">Live Call Coverage</td>
-            <td className="px-6 py-4 text-green-400">3 - 5× more volume</td>
-            <td className="px-6 py-4">1× baseline</td>
-          </tr>
-
-          <tr>
-            <td className="px-6 py-4">Go-Live Time</td>
-            <td className="px-6 py-4 text-green-400">Under 10 days</td>
-            <td className="px-6 py-4">4 - 8 weeks (hiring + training)</td>
-          </tr>
-
-          <tr>
-            <td className="px-6 py-4">Availability</td>
-            <td className="px-6 py-4 text-green-400">24 × 7 × 365</td>
-            <td className="px-6 py-4">Business hours only</td>
-          </tr>
-
-          <tr>
-            <td className="px-6 py-4">Consistency</td>
-            <td className="px-6 py-4 text-green-400">100% playbook-adherent</td>
-            <td className="px-6 py-4">Varies by rep</td>
-          </tr>
-
-          <tr>
-            <td className="px-6 py-4">Scale on Demand</td>
-            <td className="px-6 py-4 text-green-400">Instant</td>
-            <td className="px-6 py-4">Weeks of hiring & onboarding</td>
-          </tr>
-
-        </tbody>
-      </table>
-    </div>
-
-    <p className="text-center text-xs text-slate-400 max-w-3xl mx-auto">
-      All figures are directional benchmarks. During your live demo, we'll model 
-      the exact ROI based on your team size, call volume, and current infra costs.
-    </p>
-
-    <div className="text-center space-y-4">
-
-      <button className="rounded-full bg-orange-500 px-8 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">
-        See Your Custom ROI Estimate →
-      </button>
-
-      <p className="text-sm text-slate-400">
-        Join enterprises already running <span className="text-orange-400 font-semibold">10,000+ AI calls per day</span>
-      </p>
-
-    </div>
-
-  </div>
-</section>
+</section> 
 <section id="about" className="border-t border-slate-800 px-4 py-20">
   <div className="mx-auto max-w-4xl">
     <motion.div
@@ -983,64 +898,55 @@ export default function Home() {
         <div className="news-scroll flex flex-col gap-4">
           <div className="news-card rounded-xl border border-slate-800 bg-slate-950/80 p-4">
             <p className="text-sm font-semibold text-white">
-              AI Voice Agents are replacing outbound call centers
+              Natural-Quality AI Voice with Human-Like Cloning
             </p>
             <p className="mt-2 text-sm leading-6 text-slate-400">
-              Anturon agents can handle thousands of sales calls per day with faster lead response.
+              Conversations so realistic, they’re indistinguishable from your best human representative.
             </p>
           </div>
 
           <div className="news-card rounded-xl border border-slate-800 bg-slate-950/80 p-4">
             <p className="text-sm font-semibold text-white">
-              New Dashboard Analytics
+             Intelligent Lead Prioritization
             </p>
             <p className="mt-2 text-sm leading-6 text-slate-400">
-              Track call outcomes, lead stage, conversions and campaign performance in real time.
+              AI automatically ranks and sequences leads so your reps focus only on the highest-intent prospects.
             </p>
           </div>
 
           <div className="news-card rounded-xl border border-slate-800 bg-slate-950/80 p-4">
             <p className="text-sm font-semibold text-white">
-              Startup Spotlight
+              Custom Playbook Execution
             </p>
             <p className="mt-2 text-sm leading-6 text-slate-400">
-              Lean teams are now scaling outbound campaigns using AI voice agents instead of manual calling.
+              Every call follows your exact script, tone, and sales logic for consistent conversations.
             </p>
           </div>
 
           <div className="news-card rounded-xl border border-slate-800 bg-slate-950/80 p-4">
             <p className="text-sm font-semibold text-white">
-              Bihar Outbound Campaign
+             Seamless Live Agent Handoff
             </p>
             <p className="mt-2 text-sm leading-6 text-slate-400">
-              Voice agents are qualifying hot leads automatically and reducing manual follow-up workload.
+              AI instantly transfers the call to a human rep when customer intent spikes.
             </p>
           </div>
 
           <div className="news-card rounded-xl border border-slate-800 bg-slate-950/80 p-4">
             <p className="text-sm font-semibold text-white">
-              Live Demo Requests Growing
+              Automatic CRM Logging
             </p>
             <p className="mt-2 text-sm leading-6 text-slate-400">
-              More teams are using Anturon playground demos to understand AI calling flows before rollout.
+              Every call, note, and outcome is automatically synced to your CRM.
             </p>
           </div>
 
           <div className="news-card rounded-xl border border-slate-800 bg-slate-950/80 p-4">
             <p className="text-sm font-semibold text-white">
-              AI Voice Agents are replacing outbound call centers
+              Compliance & Call Recording Controls
             </p>
             <p className="mt-2 text-sm leading-6 text-slate-400">
-              Anturon agents can handle thousands of sales calls per day with faster lead response.
-            </p>
-          </div>
-
-          <div className="news-card rounded-xl border border-slate-800 bg-slate-950/80 p-4">
-            <p className="text-sm font-semibold text-white">
-              New Dashboard Analytics
-            </p>
-            <p className="mt-2 text-sm leading-6 text-slate-400">
-              Track call outcomes, lead stage, conversions and campaign performance in real time.
+              Built-in recording, consent management, and audit-ready logs ensure full compliance.
             </p>
           </div>
         </div>

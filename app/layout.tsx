@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Anturon - Enterprise Voice AI for Sales, Support & BPO Automation",
   description:
-    "Anturon deploys AI voice agents for enterprise inbound & outbound calls - sales, support, BPO & scheduling. CRM-integrated. Live under 10 days. Book a demo.",
+    "Anturon deploys AI voice agents for enterprise inbound & outbound calls - sales, support, BPO & scheduling. CRM-integrated. Live under 2-3 days. Book a demo.",
   icons: {
     icon: "/favicon.jpg",
     shortcut: "/favicon.jpg",

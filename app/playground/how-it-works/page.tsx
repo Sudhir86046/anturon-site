@@ -108,14 +108,14 @@ export default function PlaygroundDetailPage() {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4"
           onClick={() => setSelectedImage(null)}
         >
-          <div className="relative h-[80vh] w-full max-w-6xl">
-            <Image
-              src={selectedImage}
-              alt="Full preview"
-              fill
-              className="object-contain rounded-2xl"
-            />
-          </div>
+        <div className="relative h-[80vh] w-full max-w-6xl flex items-center justify-center">
+  <Image
+    src={selectedImage}
+    alt="Full preview"
+    fill
+    className="object-contain"
+  />
+</div>
         </div>
       )}
       <Footer/>

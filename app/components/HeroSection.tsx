@@ -6,8 +6,7 @@ import { motion } from "framer-motion";
 const stats = [
   { label: "Calls Handled Daily", value: "10,000+" },
   { label: "Avg. Agent Response Time", value: "0.8 sec" },
-  { label: "Go-Live in Under 10 Days", value: "< 10 Days" },
-  { label: "Incubated", value: "CIMP-BIIF" },
+  { label: "Go-Live in Under 2-3 Days", value: "2-3Days" },
 ];
 export default function HeroSection() {
   const [showIntroGlow, setShowIntroGlow] = useState(true);
@@ -15,47 +14,24 @@ export default function HeroSection() {
   useEffect(() => {
     const t = setTimeout(() => setShowIntroGlow(false), 2500);
     return () => clearTimeout(t);
-  }, []);
-
-  return (
+  },
+   []);
+ return (
     <section
       id="hero"
       className="relative overflow-hidden border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-950 to-black"
     >
-      {showIntroGlow && (
-        <div className="pointer-events-none fixed inset-0 z-40 flex items-center justify-center bg-slate-950/60">
-          <motion.div
-            initial={{ scale: 0.6, opacity: 0 }}
-            animate={{ scale: 1.05, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="h-64 w-64 rounded-full bg-orange-500/60 blur-3xl"
-          />
-        </div>
-      )}
-
-      <motion.div
-        aria-hidden="true"
-        initial={{ y: -120, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-        className="pointer-events-none absolute -top-40 right-4 h-80 w-80 rounded-full bg-orange-500/25 blur-3xl"
-      />
-
+       
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-[-180px] h-80 bg-gradient-to-t from-orange-500/10 via-transparent to-transparent blur-3xl"
-      />
+        className="pointer-events-none absolute inset-x-0 bottom-[-180px] h-80 bg-gradient-to-t from-orange-500/10 via-transparent to-transparent blur-3xl" />
 
-       
-      <div className="mx-auto flex max-w-[1400px] flex-col gap-10 px-4 md:px-10 pb-16 pt-20 md:flex-row md:items-center md:gap-12 md:pb-24 md:pt-24">
-        
-         
+       <div className="mx-auto flex max-w-[1400px] flex-col gap-10 px-4 md:px-10 pb-8 pt-10 md:flex-row md:items-center md:gap-12 md:pb-12 md:pt-14">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative z-10 flex-1 space-y-6"
-        >
+          className="relative z-10 flex-1 space-y-6">
           <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/40 bg-orange-500/10 px-3 py-1 text-xs font-medium text-orange-300">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-orange-400" />
             <span>LIVE  |  Enterprise Voice AI - Inbound · Outbound · Support · BPO</span>
@@ -92,7 +68,7 @@ export default function HeroSection() {
       Start Pilot
     </a>
     <span className="mt-1 text-xs text-slate-400">
-      No infrastructural changes. Live in 10 days.
+      No infrastructural changes. Live in 2-3 days.
     </span>
   </div>
 
